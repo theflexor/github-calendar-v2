@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { getData } from "./api";
-import { Cell } from "./components/cell";
 import dayjs from "dayjs";
 import { getCalendar } from "./utils/calendar";
+import { Cell } from "./components/Cell";
 
 function App() {
   const [data, setData] = useState();
@@ -15,7 +15,7 @@ function App() {
       setData(getCalendar(weeks, data, date));
     });
   }, [date, weeks]);
-  
+
   return (
     <>
       <div className="header">
