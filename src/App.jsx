@@ -9,12 +9,13 @@ function App() {
   const [data, setData] = useState();
   const [weeks, setWeeks] = useState(55);
   const [date, setDate] = useState(dayjs().format("YYYY-MM-DD"));
-  console.log(date);
+
   useEffect(() => {
     getData().then((data) => {
       setData(getCalendar(weeks, data, date));
     });
   }, [date, weeks]);
+  
   return (
     <>
       <div className="header">
@@ -48,7 +49,8 @@ function App() {
         "Неправельный формат даты"
       )}
       <div className="footer">
-      <span>меньше</span>  {["#EDEDED", "#ACD5F2", "#7FA8C9", "#527BA0", "#254E77"].map(
+        <span>меньше</span>{" "}
+        {["#EDEDED", "#ACD5F2", "#7FA8C9", "#527BA0", "#254E77"].map(
           (color) => (
             <div key={color} style={{ background: color }}></div>
           )
