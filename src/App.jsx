@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       <div className="header">
-        <select onChange={(e) => setWeeks(e.target.value)}>
+        <select defaultValue={'50'} onChange={(e) => setWeeks(e.target.value)}>
           <option value="25">25</option>
           <option value="50">50</option>
           <option value="70">70</option>
